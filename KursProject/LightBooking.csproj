@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{595E78BB-BD3F-45AC-BDDC-6A5BA608D3C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>KursProject</RootNamespace>
-    <AssemblyName>KursProject</AssemblyName>
+    <RootNamespace>LightBooking</RootNamespace>
+    <AssemblyName>LightBooking</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace KursProject.modelDB
+namespace LightBooking.modelDB
 {
     public partial class model : DbContext
     {

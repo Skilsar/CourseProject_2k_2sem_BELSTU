@@ -1,6 +1,6 @@
-﻿using KursProject.Commands;
-using KursProject.modelDB;
-using KursProject.repository;
+﻿using LightBooking.Commands;
+using LightBooking.modelDB;
+using LightBooking.repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     internal class allDriversVM: ViewModelBase
     {

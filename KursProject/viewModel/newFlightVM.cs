@@ -1,6 +1,6 @@
-﻿using KursProject.Commands;
-using KursProject.modelDB;
-using KursProject.repository;
+﻿using LightBooking.Commands;
+using LightBooking.modelDB;
+using LightBooking.repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 using Microsoft.Toolkit.Uwp.Notifications;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     public class newFlightVM: ViewModelBase
     {

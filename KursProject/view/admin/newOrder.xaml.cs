@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KursProject.view
+namespace LightBooking.view
 {
     /// <summary>
     /// Логика взаимодействия для newOrder.xaml

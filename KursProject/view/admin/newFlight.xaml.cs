@@ -1,5 +1,5 @@
-﻿using KursProject.modelDB;
-using KursProject.viewModel;
+﻿using LightBooking.modelDB;
+using LightBooking.viewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KursProject.view
+namespace LightBooking.view
 {
     /// <summary>
     /// Логика взаимодействия для Page1.xaml

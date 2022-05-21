@@ -1,5 +1,5 @@
-﻿using KursProject.Commands;
-using KursProject.repository;
+﻿using LightBooking.Commands;
+using LightBooking.repository;
 using Microsoft.Toolkit.Uwp.Notifications;
 using Microsoft.Win32;
 using System;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     public class newDriverVM : ViewModelBase
     {

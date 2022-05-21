@@ -4,10 +4,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KursProject.reposirory;
-using KursProject.modelDB;
+using LightBooking.reposirory;
+using LightBooking.modelDB;
 
-namespace KursProject.repository
+namespace LightBooking.repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {

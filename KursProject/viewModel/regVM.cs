@@ -1,16 +1,16 @@
-﻿using KursProject.Commands;
+﻿using LightBooking.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using KursProject.repository;
+using LightBooking.repository;
 using System.Windows;
 using Microsoft.Win32;
 using Microsoft.Toolkit.Uwp.Notifications;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     public class regVM : ViewModelBase
     {

@@ -1,4 +1,4 @@
-﻿using KursProject.viewModel;
+﻿using LightBooking.viewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KursProject
+namespace LightBooking
 {
     /// <summary>
     /// Логика взаимодействия для booking.xaml

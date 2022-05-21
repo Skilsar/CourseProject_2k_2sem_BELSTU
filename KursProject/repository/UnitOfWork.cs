@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KursProject.modelDB;
+using LightBooking.modelDB;
 
-namespace KursProject.repository
+namespace LightBooking.repository
 {
     public class UnitOfWork : IDisposable
     {
