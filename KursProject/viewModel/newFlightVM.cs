@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace KursProject.viewModel
 {
@@ -31,10 +32,10 @@ namespace KursProject.viewModel
         {
             if (Requests.AddFlight(direction, date, time, selectDriver))
             {
-                
-                MessageBox.Show("Рейс добавлен");
+                new ToastContentBuilder().AddAppLogoOverride(new Uri("ms-appdata:///local/images/logo.png"),
+                    ToastGenericAppLogoCrop.Circle).AddText("Уведомление для администратора").AddText("Рейс успешно добавлен!").Show();
             }
-            else MessageBox.Show("ОШИБКА! Не удалось добавить рейс!");
+            else new ToastContentBuilder().AddText("ОШИБКА! Не удалось добавить рейс!").Show();
 
         }
 

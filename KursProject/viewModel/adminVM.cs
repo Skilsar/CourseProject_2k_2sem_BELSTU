@@ -1,5 +1,6 @@
 ﻿using KursProject.Commands;
 using KursProject.view;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,6 +98,7 @@ namespace KursProject.viewModel
         {
             Authorization auth = new Authorization();
             Application.Current.Windows[0].Close();
+            new ToastContentBuilder().AddText("Уведомление ПУ администратора").AddText("Вы вышли из аккаунта администратора!").Show();
             auth.Show();
         }
 

@@ -12,6 +12,7 @@ using KursProject.Commands;
 using KursProject.view.user;
 using KursProject.view;
 using KursProject.modelDB;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace KursProject.viewModel
 {
@@ -123,6 +124,7 @@ namespace KursProject.viewModel
         {
             Authorization auth = new Authorization();
             Application.Current.Windows[0].Close();
+            new ToastContentBuilder().AddText("Уведомление").AddText("Вы вышли из аккаунта!").Show();
             auth.Show();
         }
 
