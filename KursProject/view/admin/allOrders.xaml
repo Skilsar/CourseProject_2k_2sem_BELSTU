@@ -1,0 +1,40 @@
+﻿<Page x:Class="KursProject.view.allOrders"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KursProject.view"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="allOrders">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">База заказов</TextBlock>
+            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
+                <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Дата" Width="120" Margin="10,0" FontSize="16"/>
+                <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Время" Width="120" Margin="10,0" FontSize="16"/>
+                <Button Height="30" Width="120">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Height="30" Command="{Binding open_UserInfo}"  Width="130" Margin="10,0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="DeleteForever" Width="24" Height="24"/>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="10,0,0,0">Удалить</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding logOut}" Height="30" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ConfirmationNumberOutline" Width="24" Height="24"/>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="5,0,0,0">Добавить</TextBlock>
+                    </StackPanel>
+                </Button>
+            </DockPanel>
+            <DataGrid x:Name="ListOrders" ItemsSource="{Binding list}"></DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

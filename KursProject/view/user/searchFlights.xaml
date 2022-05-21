@@ -1,0 +1,42 @@
+﻿<Page x:Class="KursProject.searchFlights"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KursProject"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Поиск рейсов">
+
+    <Grid>
+        <StackPanel Margin="0,0,0,0">
+            <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Поиск и бронирование</TextBlock>
+            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
+                <ComboBox FontSize="16" materialDesign:HintAssist.Hint="Направление" VerticalAlignment="Center" Width="140" Height="30" Margin="10,0">
+                    <ComboBoxItem>Любань - Минск</ComboBoxItem>
+                    <ComboBoxItem>Минск - Любань</ComboBoxItem>
+                    <ComboBoxItem>Любань - Боровляны</ComboBoxItem>
+                    <ComboBoxItem>Боровляны - Любань</ComboBoxItem>
+                </ComboBox>
+                <DatePicker FontSize="16" Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Width="120" Height="30" Margin="10,0"/>
+                <Button Height="30">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
+                    </StackPanel>
+                </Button>
+            </DockPanel>
+            <DataGrid AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="140" Header="Дата" Binding="{Binding date}" />
+                    <DataGridTextColumn Width="110" Header="Время" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="150" Header="Направление" Binding="{Binding direction}" />
+                    <DataGridTextColumn Width="150" Header="Водитель (Имя)" Binding="{Binding DRIVER.name}" />
+                    <DataGridTextColumn Width="150" Header="Водитель (Фамилия)" Binding="{Binding DRIVER.surname}" />
+                    <DataGridTextColumn Width="150" Header="Водитель (Номер авто)" Binding="{Binding DRIVER.number_car}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
