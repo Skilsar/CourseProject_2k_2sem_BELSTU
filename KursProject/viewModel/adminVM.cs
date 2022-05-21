@@ -1,5 +1,5 @@
-﻿using KursProject.Commands;
-using KursProject.view;
+﻿using LightBooking.Commands;
+using LightBooking.view;
 using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     public class adminVM : ViewModelBase
     {

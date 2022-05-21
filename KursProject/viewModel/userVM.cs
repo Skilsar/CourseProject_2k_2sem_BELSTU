@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-using KursProject.repository;
+using LightBooking.repository;
 using System.Windows;
 using Microsoft.Win32;
-using KursProject.Commands;
-using KursProject.view.user;
-using KursProject.view;
-using KursProject.modelDB;
+using LightBooking.Commands;
+using LightBooking.view.user;
+using LightBooking.view;
+using LightBooking.modelDB;
 using Microsoft.Toolkit.Uwp.Notifications;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     public class userVM : ViewModelBase
     {

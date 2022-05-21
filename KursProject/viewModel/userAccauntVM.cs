@@ -1,6 +1,7 @@
-﻿using KursProject.Commands;
-using KursProject.modelDB;
-using KursProject.repository;
+﻿using LightBooking.Commands;
+using LightBooking.modelDB;
+using LightBooking.repository;
+using Microsoft.Toolkit.Uwp.Notifications;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     public class userAccauntVM: ViewModelBase
     {
@@ -86,9 +87,14 @@ namespace KursProject.viewModel
             {
                 if (Requests.UpdateUser(user, password))
                 {
-                    //что напиши
+                    new ToastContentBuilder().AddText("Уведомление").AddText("Данные успешно изменены!").Show();
+                }
+                else
+                {
+                    new ToastContentBuilder().AddText("Уведомление").AddText("Ошибка изменения данных!").Show();
                 }
             }
+            else new ToastContentBuilder().AddText("Уведомление").AddText("Пароли не совпадают!").Show();
         }
     }
 }

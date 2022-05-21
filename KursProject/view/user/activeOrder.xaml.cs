@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KursProject.view.user
+namespace LightBooking.view.user
 {
     /// <summary>
     /// Логика взаимодействия для activeOrder.xaml

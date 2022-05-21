@@ -1,4 +1,4 @@
-namespace KursProject.modelDB
+namespace LightBooking.modelDB
 {
     using System;
     using System.Collections.Generic;

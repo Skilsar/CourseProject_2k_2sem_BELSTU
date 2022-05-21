@@ -1,11 +1,11 @@
-﻿using KursProject.modelDB;
+﻿using LightBooking.modelDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     internal static class accountSettingsVM
     {

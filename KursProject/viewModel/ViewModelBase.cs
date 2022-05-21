@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KursProject.viewModel
+namespace LightBooking.viewModel
 {
     /// <summary>
     /// Provides common functionality for ViewModel classes
