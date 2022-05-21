@@ -9,6 +9,7 @@ using KursProject.repository;
 using KursProject.modelDB;
 using System.Windows;
 using KursProject.view;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace KursProject.viewModel
 {
@@ -30,7 +31,6 @@ namespace KursProject.viewModel
             {
                 return;
             }
-            //MessageBox.Show("Успешный вход ");
             int acceslevel = int.Parse(result["status"]);
             switch (acceslevel)
             {
@@ -49,6 +49,7 @@ namespace KursProject.viewModel
                     }
             }
             Win.Close();
+            new ToastContentBuilder().AddText("Уведомление").AddText("Вы успешно вошли!").Show();
         }
 
         public ICommand regButton => new DelegateCommand(RegButton);

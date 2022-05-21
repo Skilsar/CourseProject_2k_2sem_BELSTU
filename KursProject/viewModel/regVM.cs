@@ -8,6 +8,7 @@ using System.Windows.Input;
 using KursProject.repository;
 using System.Windows;
 using Microsoft.Win32;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace KursProject.viewModel
 {
@@ -41,8 +42,8 @@ namespace KursProject.viewModel
                 }
             else
                 {
-                    MessageBox.Show("Данные введены некорректно");
-                }
+                new ToastContentBuilder().AddText("Уведомление").AddText("Данные регистрации введены некорректно").Show();
+            }
 
             Authorization auth = new Authorization();
             auth.Show();

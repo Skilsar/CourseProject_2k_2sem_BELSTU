@@ -1,5 +1,6 @@
 ﻿using KursProject.Commands;
 using KursProject.repository;
+using Microsoft.Toolkit.Uwp.Notifications;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -54,14 +55,14 @@ namespace KursProject.viewModel
             {
                 if (Requests.AddDriver(name, surname, login, password, phone, number_car, brand_car, color_car, count_seats, photo))
                 {
-                    MessageBox.Show("Водитель зарегистрирован");
+                    new ToastContentBuilder().AddText("Уведомление ПУ Администратора").AddText("Водитель добавлен!").Show();
                 }
-                else MessageBox.Show("ОШИБКА! Водитель не зарегистрирован");
+                else new ToastContentBuilder().AddText("Уведомление ПУ Администратора").AddText("ОШИБКА! Не удалось добавить водителя!").Show();
 
             }
             else
             {
-                MessageBox.Show("Данные введены некорректно");
+                new ToastContentBuilder().AddText("Уведомление ПУ Администратора").AddText("Данные введены некорректно").Show();
             }
         }
     }
