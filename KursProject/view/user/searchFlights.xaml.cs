@@ -1,4 +1,7 @@
-﻿using LightBooking.viewModel;
+﻿using LightBooking.modelDB;
+using LightBooking.repository;
+using LightBooking.viewModel;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +24,29 @@ namespace LightBooking
     /// </summary>
     public partial class searchFlights : Page
     {
+        public DateTime date = DateTime.Now;
+        public string time = DateTime.Now.TimeOfDay.ToString();
+        private USER user = accountSettingsVM._user;
+
         public searchFlights()
         {
             InitializeComponent();
-            searchFlightsVM model = new searchFlightsVM();
+            historyFlightsVM model = new historyFlightsVM();
             DataContext = model;
             ListFlights.ItemsSource = model.list;
+        }
+
+        public void newOrder(object sender, RoutedEventArgs e)
+        {
+            Button button = e.Source as Button;
+            FLIGHT selectedFlight = button.DataContext as FLIGHT;
+            time.Substring(0, time.IndexOf('.'));
+
+
+            if (Requests.AddOrder(date, time.ToString(), user, selectedFlight)){
+                new ToastContentBuilder().AddText("Уведомление").AddText("Заказ успешно оформлен").Show();
+            }
+            else new ToastContentBuilder().AddText("Уведомление").AddText("ОШИБКА! Не удалось оформить заказ!").Show();
         }
     }
 }

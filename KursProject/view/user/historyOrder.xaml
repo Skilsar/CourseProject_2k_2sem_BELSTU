@@ -11,6 +11,18 @@
     <Grid>
         <StackPanel Margin="0,0,0,0">
             <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">История поездок</TextBlock>
+            <DataGrid IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="120" Header="Дата" Binding="{Binding date}" />
+                    <DataGridTextColumn Width="100" Header="Время" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="150" Header="Направление" Binding="{Binding FLIGHT1.direction}" />
+                    <DataGridTextColumn Width="150" Header="Дата рейса" Binding="{Binding FLIGHT1.date}" />
+                    <DataGridTextColumn Width="150" Header="Время рейса" Binding="{Binding FLIGHT1.time}" />
+                    <DataGridTextColumn Width="120" Header="Водитель (Имя)" Binding="{Binding FLIGHT1.DRIVER.name}" />
+                    <DataGridTextColumn Width="130" Header="Водитель (Фамилия)" Binding="{Binding FLIGHT1.DRIVER.surname}" />
+                    <DataGridTextColumn Width="130" Header="Водитель (Номер авто)" Binding="{Binding FLIGHT1.DRIVER.number_car}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Page>

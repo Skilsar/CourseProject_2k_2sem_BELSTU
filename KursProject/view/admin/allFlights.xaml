@@ -33,7 +33,7 @@
                     </StackPanel>
                 </Button>
             </DockPanel>
-            <DataGrid AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="140" Header="Дата" Binding="{Binding date}" />
                     <DataGridTextColumn Width="110" Header="Время" Binding="{Binding time}" />

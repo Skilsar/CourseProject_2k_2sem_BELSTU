@@ -87,18 +87,20 @@
     <Compile Include="modelDB\sysdiagram.cs" />
     <Compile Include="modelDB\USER.cs" />
     <Compile Include="services\EmailSenderService.cs" />
-    <Compile Include="viewModel\accountSettingsVM.cs" />
-    <Compile Include="viewModel\adminVM.cs" />
-    <Compile Include="viewModel\allDriversVM.cs" />
-    <Compile Include="viewModel\allFlightsVM.cs" />
-    <Compile Include="viewModel\allOrdersVM.cs" />
-    <Compile Include="viewModel\allUsersVM.cs" />
-    <Compile Include="viewModel\FeedbackVM.cs" />
-    <Compile Include="viewModel\newFlightVM.cs" />
-    <Compile Include="viewModel\newDriverVM.cs" />
-    <Compile Include="viewModel\searchFlightsVM.cs" />
-    <Compile Include="viewModel\userAccauntVM.cs" />
-    <Compile Include="viewModel\userVM.cs" />
+    <Compile Include="viewModel\user\accountSettingsVM.cs" />
+    <Compile Include="viewModel\admin\adminVM.cs" />
+    <Compile Include="viewModel\admin\allDriversVM.cs" />
+    <Compile Include="viewModel\admin\allFlightsVM.cs" />
+    <Compile Include="viewModel\admin\allOrdersVM.cs" />
+    <Compile Include="viewModel\admin\allUsersVM.cs" />
+    <Compile Include="viewModel\admin\newOrderVM.cs" />
+    <Compile Include="viewModel\user\FeedbackVM.cs" />
+    <Compile Include="viewModel\admin\newFlightVM.cs" />
+    <Compile Include="viewModel\admin\newDriverVM.cs" />
+    <Compile Include="viewModel\user\historyOrderVM.cs" />
+    <Compile Include="viewModel\user\searchFlightsVM.cs" />
+    <Compile Include="viewModel\user\userAccauntVM.cs" />
+    <Compile Include="viewModel\user\userVM.cs" />
     <Compile Include="view\admin\allUsers.xaml.cs">
       <DependentUpon>allUsers.xaml</DependentUpon>
     </Compile>
@@ -294,6 +296,9 @@
     <Resource Include="view\user\avatar.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
     <PackageReference Include="EntityFramework.ru">
       <Version>6.2.0</Version>
     </PackageReference>
@@ -310,5 +315,6 @@
       <Version>4.7.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -54,7 +54,7 @@ namespace LightBooking.modelDB
 
         public override string ToString()
         {
-            return $"{this.name}{this.surname}{this.number_car}";
+            return $"{this.name.ToString()} {this.number_car.ToString()}";
         }
     }
 }

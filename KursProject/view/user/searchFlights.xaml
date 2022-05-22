@@ -12,31 +12,40 @@
     <Grid>
         <StackPanel Margin="0,0,0,0">
             <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Поиск и бронирование</TextBlock>
-            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
-                <ComboBox FontSize="16" materialDesign:HintAssist.Hint="Направление" VerticalAlignment="Center" Width="140" Height="30" Margin="10,0">
-                    <ComboBoxItem>Любань - Минск</ComboBoxItem>
-                    <ComboBoxItem>Минск - Любань</ComboBoxItem>
-                    <ComboBoxItem>Любань - Боровляны</ComboBoxItem>
-                    <ComboBoxItem>Боровляны - Любань</ComboBoxItem>
-                </ComboBox>
-                <DatePicker FontSize="16" Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Width="120" Height="30" Margin="10,0"/>
-                <Button Height="30">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
-                    </StackPanel>
-                </Button>
-            </DockPanel>
-            <DataGrid AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="140" Header="Дата" Binding="{Binding date}" />
-                    <DataGridTextColumn Width="110" Header="Время" Binding="{Binding time}" />
-                    <DataGridTextColumn Width="150" Header="Направление" Binding="{Binding direction}" />
-                    <DataGridTextColumn Width="150" Header="Водитель (Имя)" Binding="{Binding DRIVER.name}" />
-                    <DataGridTextColumn Width="150" Header="Водитель (Фамилия)" Binding="{Binding DRIVER.surname}" />
-                    <DataGridTextColumn Width="150" Header="Водитель (Номер авто)" Binding="{Binding DRIVER.number_car}" />
-                </DataGrid.Columns>
-            </DataGrid>
+              <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
+                    <ComboBox FontSize="16" materialDesign:HintAssist.Hint="Направление" VerticalAlignment="Center" Width="140" Height="30" Margin="10,0">
+                        <ComboBoxItem>Любань - Минск</ComboBoxItem>
+                        <ComboBoxItem>Минск - Любань</ComboBoxItem>
+                        <ComboBoxItem>Любань - Боровляны</ComboBoxItem>
+                        <ComboBoxItem>Боровляны - Любань</ComboBoxItem>
+                    </ComboBox>
+                    <DatePicker FontSize="16" Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Width="120" Height="30" Margin="10,0"/>
+                    <Button Height="30">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
+                            <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </DockPanel>
+            <ScrollViewer  Width="700" ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="Red">
+                <DataGrid IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="120" Header="Дата" Binding="{Binding date}" />
+                        <DataGridTextColumn Width="100" Header="Время" Binding="{Binding time}" />
+                        <DataGridTextColumn Width="150" Header="Направление" Binding="{Binding direction}" />
+                        <DataGridTemplateColumn Header="Заказать">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="newOrder">Заказать</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTextColumn Width="120" Header="Водитель (Имя)" Binding="{Binding DRIVER.name}" />
+                    <DataGridTextColumn Width="130" Header="Водитель (Фамилия)" Binding="{Binding DRIVER.surname}" />
+                    <DataGridTextColumn Width="130" Header="Водитель (Номер авто)" Binding="{Binding DRIVER.number_car}" />-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 </Page>

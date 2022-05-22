@@ -18,8 +18,8 @@ namespace LightBooking.services
         {
             try
             {
-                MailAddress from = new MailAddress("skilsar.tk@gmail.com", "LightBooking");
-                MailAddress to = new MailAddress("skilsar@gmail.com");
+                MailAddress from = new MailAddress("lightbooking.by@gmail.com", "LightBooking");
+                MailAddress to = new MailAddress("lightbooking.by@gmail.com");
                 MailMessage message = new MailMessage(from, to);
                 message.Subject = $"Обратная связь: {userTheme}";
                 message.IsBodyHtml = true;
@@ -27,7 +27,7 @@ namespace LightBooking.services
                 message.Body +=$"<div style=\"font-size:16px;\"><p><strong>Текст сообщения</strong></p><hr/><p>{userMessage}</p><hr/><p>Данное сообщение отправлено автоматически! Ответ направлять на почту {userMail}</p></div>";
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential("skilsar.tk@gmail.com", "Globaladmin707*");
+                smtp.Credentials = new NetworkCredential("lightbooking.by@gmail.com", "vK8db8@$s$");
                 smtp.EnableSsl = true;
                 smtp.TargetName = "STARTTLS/smtp.gmail.com";
                 await (smtp.SendMailAsync(message));
@@ -36,6 +36,7 @@ namespace LightBooking.services
             catch (Exception e)
             {
                 MessageBox.Show($"{e.Message},\n{e.StackTrace},\n{e.InnerException},\n{e.Data}");
+                new ToastContentBuilder().AddText("Уведомление E-Mail").AddText("ОШИБКА! Сообщение не отправлено! Свжитесь с администратором для устранение ошибки!").Show();
             }
         }
     }

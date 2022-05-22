@@ -98,6 +98,16 @@ namespace LightBooking.repository
             }
             return true;
         }
+        public static bool AddOrder(DateTime date, string time, USER user, FLIGHT flight)
+        {
+            using (UnitOfWork unitOfWork = new UnitOfWork())
+            {
+                ORDER order = new ORDER() { date = date, time = TimeSpan.Parse(time), user_id = user.Id, flight = flight.Id };
+                unitOfWork.OrderRepository.Add(order);
+                unitOfWork.Save();
+            }
+            return true;
+        }
 
         public static List<DRIVER> GetDrivers()
         {
@@ -125,6 +135,16 @@ namespace LightBooking.repository
             using (UnitOfWork unitsOfWork = new UnitOfWork())
             {
                 orders = unitsOfWork.OrderRepository.GetAll();
+                return orders;
+            }
+        }
+        
+        public static List<ORDER> GetUserOrders(USER user)
+        {
+            List<ORDER> orders = new List<ORDER>();
+            using (UnitOfWork unitsOfWork = new UnitOfWork())
+            {
+                orders = unitsOfWork.OrderRepository.GetAll().Where(x => x.user_id == user.Id).ToList();
                 return orders;
             }
         }

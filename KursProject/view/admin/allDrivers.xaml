@@ -34,7 +34,7 @@
                     </StackPanel>
                 </Button>
             </DockPanel>
-            <DataGrid AutoGenerateColumns="False" x:Name="ListDrivers" SelectedItem="{Binding sel}" ItemsSource="{Binding list}">
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListDrivers" SelectedItem="{Binding sel}" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="90" Header="Имя" Binding="{Binding name}" />
                     <DataGridTextColumn Width="110" Header="Фамилия" Binding="{Binding surname}" />

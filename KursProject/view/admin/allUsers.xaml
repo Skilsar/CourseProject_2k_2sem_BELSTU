@@ -28,7 +28,7 @@
                     </StackPanel>
                 </Button>
             </DockPanel>
-            <DataGrid AutoGenerateColumns="False" x:Name="ListUsers" SelectedItem="{Binding user}" ItemsSource="{Binding list}">
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListUsers" SelectedItem="{Binding user}" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="90" Header="Имя" Binding="{Binding name}" />
                     <DataGridTextColumn Width="110" Header="Фамилия" Binding="{Binding surname}" />

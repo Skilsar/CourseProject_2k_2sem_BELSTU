@@ -33,10 +33,5 @@ namespace LightBooking.modelDB
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USER> USERS { get; set; }
-
-        public override string ToString()
-        {
-            return "Логин:" + this.login + " " + "Пароль:" + this.password;
-        }
     }
 }

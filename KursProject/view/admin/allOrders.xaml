@@ -34,7 +34,17 @@
                     </StackPanel>
                 </Button>
             </DockPanel>
-            <DataGrid x:Name="ListOrders" ItemsSource="{Binding list}"></DataGrid>
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="100" Header="Дата" Binding="{Binding date}" />
+                    <DataGridTextColumn Width="100" Header="Время" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="140" Header="Имя пользователя" Binding="{Binding USER.name}" />
+                    <DataGridTextColumn Width="110" Header="Дата рейса" Binding="{Binding FLIGHT1.date}" />
+                    <DataGridTextColumn Width="100" Header="Время рейса" Binding="{Binding FLIGHT1.time}" />
+                    <DataGridTextColumn Width="110" Header="Направление" Binding="{Binding FLIGHT1.direction}" />
+                    <DataGridTextColumn Width="140" Header="Имя водителя" Binding="{Binding FLIGHT1.DRIVER.name}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Page>

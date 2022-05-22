@@ -70,14 +70,6 @@ namespace LightBooking.modelDB
                 .HasForeignKey(e => e.flight)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ORDER>()
-                .Property(e => e.date)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ORDER>()
-                .Property(e => e.time)
-                .IsFixedLength();
-
             modelBuilder.Entity<USER>()
                 .Property(e => e.name)
                 .IsFixedLength();

@@ -6,14 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LightBooking.viewModel
+namespace LightBooking.viewModel.admin
 {
-    internal class searchFlightsVM
+    public class newOrderVM : ViewModelBase
     {
-        public List<FLIGHT> list { get; set; }
-        public searchFlightsVM()
+        public List<FLIGHT> flights { get; set; }
+
+        public newOrderVM()
         {
-            list = Requests.GetFlights();
+            flights = Requests.GetFlights();
         }
     }
 }
