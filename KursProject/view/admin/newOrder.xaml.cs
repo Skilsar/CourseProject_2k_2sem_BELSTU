@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LightBooking.viewModel;
+using LightBooking.viewModel.admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,12 @@ namespace LightBooking.view
     /// </summary>
     public partial class newOrder : Page
     {
+        newOrderVM model;
         public newOrder()
         {
             InitializeComponent();
+            model = new newOrderVM();
+            DataContext = model;
         }
     }
 }

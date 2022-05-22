@@ -11,11 +11,10 @@ namespace LightBooking.modelDB
     {
         public int Id { get; set; }
 
-        [StringLength(10)]
-        public string date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? date { get; set; }
 
-        [StringLength(10)]
-        public string time { get; set; }
+        public TimeSpan? time { get; set; }
 
         public int user_id { get; set; }
 

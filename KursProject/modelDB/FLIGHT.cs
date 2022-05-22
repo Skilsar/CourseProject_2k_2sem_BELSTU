@@ -31,5 +31,10 @@ namespace LightBooking.modelDB
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ORDER> ORDERS { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.date.ToString().Substring(0, this.date.ToString().IndexOf(' '))} {this.time} {this.direction}";
+        }
     }
 }
