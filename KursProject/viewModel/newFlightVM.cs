@@ -32,8 +32,7 @@ namespace LightBooking.viewModel
         {
             if (Requests.AddFlight(direction, date, time, selectDriver))
             {
-                new ToastContentBuilder().AddAppLogoOverride(new Uri("ms-appdata:///local/images/logo.png"),
-                    ToastGenericAppLogoCrop.Circle).AddText("Уведомление для администратора").AddText("Рейс успешно добавлен!").Show();
+                new ToastContentBuilder().AddText("Уведомление для администратора").AddText("Рейс успешно добавлен!").Show();
             }
             else new ToastContentBuilder().AddText("ОШИБКА! Не удалось добавить рейс!").Show();
 
