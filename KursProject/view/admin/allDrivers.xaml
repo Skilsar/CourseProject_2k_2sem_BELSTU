@@ -34,8 +34,6 @@
                     </StackPanel>
                 </Button>
             </DockPanel>
-            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
-            </DockPanel>
             <DataGrid AutoGenerateColumns="False" x:Name="ListDrivers" SelectedItem="{Binding sel}" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="90" Header="Имя" Binding="{Binding name}" />

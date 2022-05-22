@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightBooking.viewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace LightBooking.view.user
     /// </summary>
     public partial class Feedback : Page
     {
+        FeedbackVM model;
         public Feedback()
         {
             InitializeComponent();
+            model = new FeedbackVM();
+            DataContext = model;
         }
     }
 }

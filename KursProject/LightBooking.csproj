@@ -86,12 +86,14 @@
     <Compile Include="modelDB\ORDER.cs" />
     <Compile Include="modelDB\sysdiagram.cs" />
     <Compile Include="modelDB\USER.cs" />
+    <Compile Include="services\EmailSenderService.cs" />
     <Compile Include="viewModel\accountSettingsVM.cs" />
     <Compile Include="viewModel\adminVM.cs" />
     <Compile Include="viewModel\allDriversVM.cs" />
     <Compile Include="viewModel\allFlightsVM.cs" />
     <Compile Include="viewModel\allOrdersVM.cs" />
     <Compile Include="viewModel\allUsersVM.cs" />
+    <Compile Include="viewModel\FeedbackVM.cs" />
     <Compile Include="viewModel\newFlightVM.cs" />
     <Compile Include="viewModel\newDriverVM.cs" />
     <Compile Include="viewModel\searchFlightsVM.cs" />
