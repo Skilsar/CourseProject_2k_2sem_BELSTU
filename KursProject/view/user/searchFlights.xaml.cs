@@ -1,5 +1,6 @@
 ﻿using LightBooking.modelDB;
 using LightBooking.repository;
+using LightBooking.services;
 using LightBooking.viewModel;
 using Microsoft.Toolkit.Uwp.Notifications;
 using System;
@@ -35,14 +36,14 @@ namespace LightBooking
             DataContext = model;
         }
 
-        public void newOrder(object sender, RoutedEventArgs e)
+        public async void newOrder(object sender, RoutedEventArgs e)
         {
             Button button = e.Source as Button;
             FLIGHT selectedFlight = button.DataContext as FLIGHT;
             time.Substring(0, time.IndexOf('.'));
 
-
             if (Requests.AddOrder(date, time.ToString(), user, selectedFlight)){
+                await EmailSenderService.SendOrder(date, time, user, selectedFlight);
                 new ToastContentBuilder().AddText("Уведомление").AddText("Заказ успешно оформлен").Show();
             }
             else new ToastContentBuilder().AddText("Уведомление").AddText("ОШИБКА! Не удалось оформить заказ!").Show();

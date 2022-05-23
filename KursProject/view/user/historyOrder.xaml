@@ -11,7 +11,7 @@
     <Grid>
         <StackPanel Margin="0,0,0,0">
             <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource hitoryOrder}"/>
-            <DataGrid IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
+            <DataGrid MaxHeight="250" IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="120" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
                     <DataGridTextColumn Width="100" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />

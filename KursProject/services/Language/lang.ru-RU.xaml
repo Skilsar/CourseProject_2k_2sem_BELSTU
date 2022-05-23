@@ -19,7 +19,7 @@
 
     <!--UserWindow-->
     <v:String x:Key="sFlight" >Найти билет</v:String>
-    <v:String x:Key="activOrder" >Активные поездки</v:String>
+    <v:String x:Key="activOrder" >Последняя поездка</v:String>
     <v:String x:Key="hitoryOrder" >История поездок</v:String>
     <v:String x:Key="feedback" >Обратная связь</v:String>
     <v:String x:Key="account" >Аккаунт</v:String>
