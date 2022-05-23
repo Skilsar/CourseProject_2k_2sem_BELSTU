@@ -148,6 +148,15 @@ namespace LightBooking.repository
                 return orders;
             }
         }
+        public static ORDER GetLastUserOrder(USER user)
+        {
+            ORDER lastOrder = new ORDER();
+            using (UnitOfWork unitsOfWork = new UnitOfWork())
+            {
+                lastOrder = unitsOfWork.OrderRepository.GetAll().Where(x => x.user_id == user.Id).Last();
+                return lastOrder;
+            }
+        }
         
         public static List<USER> GetUsers()
         {

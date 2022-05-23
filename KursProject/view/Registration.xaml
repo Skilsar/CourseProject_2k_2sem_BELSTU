@@ -15,15 +15,15 @@
                 </Border.Background>
                 <Button BorderBrush="{x:Null}" MinHeight="100" MinWidth="100" Command="{Binding selectImage}" Background="{x:Null}"></Button>
             </Border>
-            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Имя" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
-            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding surname}" materialDesign:HintAssist.Hint="Фамилия" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
-            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding login}" materialDesign:HintAssist.Hint="Логин" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
-            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password}" materialDesign:HintAssist.Hint="Пароль" VerticalAlignment="Top" Width="300"  Margin="0,10,0,0" FontSize="18"/>
-            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password2}" materialDesign:HintAssist.Hint="Повторите пароль" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
-            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding phone}" materialDesign:HintAssist.Hint="Номер телефона" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
+            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="{DynamicResource name}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
+            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding surname}" materialDesign:HintAssist.Hint="{DynamicResource surname}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
+            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding login}" materialDesign:HintAssist.Hint="{DynamicResource login}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
+            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password}" materialDesign:HintAssist.Hint="{DynamicResource pass}" VerticalAlignment="Top" Width="300"  Margin="0,10,0,0" FontSize="18"/>
+            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password2}" materialDesign:HintAssist.Hint="{DynamicResource repNewPass}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
+            <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding phone}" materialDesign:HintAssist.Hint="{DynamicResource phone_number}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
             <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding email}" materialDesign:HintAssist.Hint="E-Mail" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontSize="18"/>
-            <Button Command="{Binding registrButton}" Content="ЗАРЕГИСТРИРОВАТЬСЯ" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontSize="18"/>
-            <Button Command="{Binding logButton}" Content="АВТОРИЗОВАТЬСЯ" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontSize="18"/>
+            <Button Command="{Binding registrButton}" Content="{DynamicResource reg}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontSize="18"/>
+            <Button Command="{Binding logButton}" Content="{DynamicResource auth}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontSize="18"/>
         </StackPanel>
     </Grid>
 </Window>

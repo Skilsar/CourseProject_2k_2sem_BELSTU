@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LightBooking.modelDB;
+using LightBooking.viewModel.user;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,17 @@ namespace LightBooking.view.user
     /// </summary>
     public partial class activeOrder : Page
     {
+        //public DateTime date { get; set; }
+
+        //public TimeSpan time { get; set; }
+        public List<ORDER> list { get; set; }
         public activeOrder()
         {
             InitializeComponent();
+            activeOrderVM model = new activeOrderVM();
+            DataContext = model;
+            LastOrder.ItemsSource = list;
+            LastOrder.Items.Add(model.lastOrder);
         }
     }
 }

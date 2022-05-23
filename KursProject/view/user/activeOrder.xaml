@@ -10,7 +10,19 @@
 
     <Grid>
         <StackPanel Margin="0,0,0,0">
-            <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Активные поездки</TextBlock>
+            <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource activOrder}"/>
+            <DataGrid IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" x:Name="LastOrder" ItemsSource="{Binding list}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="120" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
+                    <DataGridTextColumn Width="100" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource directFlight}" Binding="{Binding FLIGHT1.direction}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource dateFlight}" Binding="{Binding FLIGHT1.date}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource timeFlight}" Binding="{Binding FLIGHT1.time}" />
+                    <DataGridTextColumn Width="120" Header="{DynamicResource nameDrive}" Binding="{Binding FLIGHT1.DRIVER.name}" />
+                    <DataGridTextColumn Width="130" Header="{DynamicResource surnameDrive}" Binding="{Binding FLIGHT1.DRIVER.surname}" />
+                    <DataGridTextColumn Width="130" Header="{DynamicResource carDrive}" Binding="{Binding FLIGHT1.DRIVER.number_car}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Page>

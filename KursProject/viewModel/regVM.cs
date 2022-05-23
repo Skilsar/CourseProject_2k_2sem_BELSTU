@@ -9,6 +9,7 @@ using LightBooking.repository;
 using System.Windows;
 using Microsoft.Win32;
 using Microsoft.Toolkit.Uwp.Notifications;
+using System.Text.RegularExpressions;
 
 namespace LightBooking.viewModel
 {
@@ -36,14 +37,23 @@ namespace LightBooking.viewModel
         public ICommand registrButton => new DelegateCommand(regButton);
         public void regButton()
         {
-            if (password == password2 && login != null)
+            if (!Regex.Match(password, @"(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9@#!^&*.]{4,})$").Success)
+            {
+                if (password == password2 && login != null)
                 {
                     Requests.Reg(login, password, name, surname, phone, email, photo);
                 }
-            else
+                else
                 {
-                new ToastContentBuilder().AddText("Уведомление").AddText("Данные регистрации введены некорректно").Show();
+                    new ToastContentBuilder().AddText("Уведомление").AddText("Данные регистрации введены некорректно").Show();
+                }
             }
+            else
+            {
+                new ToastContentBuilder().AddText("Уведомление").AddText("Ошибка! Введен некорректный пароль!").Show();
+                MessageBox.Show("Пароль должен содержать только английские буквы и по крайней мере одну цифру и одну букву (может содержать @#!^&*.)");
+            }
+                
 
             Authorization auth = new Authorization();
             auth.Show();

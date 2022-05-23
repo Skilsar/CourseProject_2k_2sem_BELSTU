@@ -33,7 +33,6 @@ namespace LightBooking
             InitializeComponent();
             historyFlightsVM model = new historyFlightsVM();
             DataContext = model;
-            ListFlights.ItemsSource = model.list;
         }
 
         public void newOrder(object sender, RoutedEventArgs e)

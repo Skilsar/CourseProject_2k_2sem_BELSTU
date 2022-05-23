@@ -94,6 +94,7 @@
     <Compile Include="viewModel\admin\allOrdersVM.cs" />
     <Compile Include="viewModel\admin\allUsersVM.cs" />
     <Compile Include="viewModel\admin\newOrderVM.cs" />
+    <Compile Include="viewModel\user\activeOrderVM.cs" />
     <Compile Include="viewModel\user\FeedbackVM.cs" />
     <Compile Include="viewModel\admin\newFlightVM.cs" />
     <Compile Include="viewModel\admin\newDriverVM.cs" />
@@ -109,6 +110,9 @@
     </Compile>
     <Compile Include="view\admin\allOrders.xaml.cs">
       <DependentUpon>allOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\SettingsLanguage.xaml.cs">
+      <DependentUpon>SettingsLanguage.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\user\accountSettings.xaml.cs">
       <DependentUpon>accountSettings.xaml</DependentUpon>
@@ -142,9 +146,6 @@
     <Compile Include="view\admin\newFlight.xaml.cs">
       <DependentUpon>newFlight.xaml</DependentUpon>
     </Compile>
-    <Compile Include="view\admin\newOrder.xaml.cs">
-      <DependentUpon>newOrder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="view\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -158,6 +159,14 @@
     <Compile Include="view\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="services\Language\lang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="services\Language\lang.ru-RU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="view\admin\allUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,6 +191,10 @@
       <DependentUpon>Authorization.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="view\SettingsLanguage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="view\user\accountSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,10 +232,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\admin\newFlight.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="view\admin\newOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

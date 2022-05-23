@@ -1,5 +1,4 @@
-﻿using LightBooking.viewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -17,19 +16,13 @@ using System.Windows.Shapes;
 namespace LightBooking.view
 {
     /// <summary>
-    /// Логика взаимодействия для UserWindow.xaml
+    /// Логика взаимодействия для SettingsLanguage.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class SettingsLanguage : Window
     {
-        public UserWindow()
+        public SettingsLanguage()
         {
             InitializeComponent();
-
-            userVM model = new userVM();
-            model.win = this;
-
-            DataContext = model;
-
             App.LanguageChanged += LanguageChanged;
 
             CultureInfo currLang = App.Language;
@@ -45,8 +38,6 @@ namespace LightBooking.view
                 menuLang.Selected += ChangeLanguageClick;
                 menuLanguage.Items.Add(menuLang);
             }
-
-
         }
 
         private void LanguageChanged(Object sender, EventArgs e)
