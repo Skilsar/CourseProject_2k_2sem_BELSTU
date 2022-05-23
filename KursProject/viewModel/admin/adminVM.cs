@@ -62,14 +62,6 @@ namespace LightBooking.viewModel
             CurrentPage = allFlights;
 
         }
-        public ICommand newOrder => new DelegateCommand(NewOrder);
-
-        public void NewOrder()
-        {
-            newOrder newOrder = new newOrder();
-            CurrentPage = newOrder;
-
-        }
 
         public ICommand allDrivers => new DelegateCommand(AllDrivers);
         public void AllDrivers()

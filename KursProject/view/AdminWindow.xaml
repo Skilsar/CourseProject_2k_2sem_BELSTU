@@ -21,46 +21,46 @@
                 <Button Command="{Binding addFlight}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ConfirmationNumber" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Добавить рейс</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Command="{Binding newOrder}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="ConfirmationNumberOutline" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Новый заказ</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource addFlight}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding addDriver}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="DriversLicense" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Добавить водителя</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource addDriver}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding allDrivers}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="DriversLicenseOutline" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Все водители</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource allDrivers}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding allFlights}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Car" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Все рейсы</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource allFlights}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding allClients}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="People" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Все пользователи</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource allUsers}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding allOrders}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="AutoStories" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Все заказы</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource allOrders}"/>
                     </StackPanel>
                 </Button>
-                
+                <Button Command="{Binding logOut}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Logout" Width="24" Height="24"/>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource exit}"/>
+                    </StackPanel>
+                </Button>
+
             </StackPanel>
             <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5" Height="40">
                 <Button Command="{Binding goBackPage}" HorizontalAlignment="Center" MinWidth="60" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Margin="0,0,5,0">
@@ -79,18 +79,8 @@
                 <Image Source="../images/logo_white.png" Height="40" Width="40px"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Roboto" FontWeight="DemiBold">LightBooking</TextBlock>
                 <DockPanel HorizontalAlignment="Right">
-                    <Button Height="50" Command="{Binding open_UserInfo}" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Width="90">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="../images/lang/ru.png" Width="24" Height="24" />
-                            <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="10,0,0,0">RUS</TextBlock>
-                        </StackPanel>
-                    </Button>
-                    <Button Command="{Binding logOut}" Height="50" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Width="90">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Logout" Width="24" Height="24"/>
-                            <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="5,0,0,0">Выйти</TextBlock>
-                        </StackPanel>
-                    </Button>
+                    <ComboBox Foreground="#2196F4" x:Name="menuLanguage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,20,0" >
+                    </ComboBox>
                 </DockPanel>
             </DockPanel>
         </Grid>

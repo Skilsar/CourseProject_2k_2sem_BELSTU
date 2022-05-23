@@ -11,7 +11,7 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Все рейсы</TextBlock>
+            <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allFlights}"/>
             <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
                 <ComboBox FontSize="16" materialDesign:HintAssist.Hint="Направление" VerticalAlignment="Center" Width="140" Height="30" Margin="10,0">
                     <ComboBoxItem>Любань - Минск</ComboBoxItem>
@@ -23,24 +23,18 @@
                 <Button Height="30">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Command="{Binding logOut}" Height="30" Width="140" Margin="10,0,10,0">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="ConfirmationNumber" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="5,0,0,0">Добавить</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource search}"/>
                     </StackPanel>
                 </Button>
             </DockPanel>
             <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="140" Header="Дата" Binding="{Binding date}" />
-                    <DataGridTextColumn Width="110" Header="Время" Binding="{Binding time}" />
-                    <DataGridTextColumn Width="150" Header="Направление" Binding="{Binding direction}" />
-                    <DataGridTextColumn Width="150" Header="Водитель (Имя)" Binding="{Binding DRIVER.name}" />
-                    <DataGridTextColumn Width="150" Header="Водитель (Фамилия)" Binding="{Binding DRIVER.surname}" />
-                    <DataGridTextColumn Width="150" Header="Водитель (Номер авто)" Binding="{Binding DRIVER.number_car}" />
+                    <DataGridTextColumn Width="140" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
+                    <DataGridTextColumn Width="110" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource directFlight}" Binding="{Binding direction}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource nameDrive}" Binding="{Binding DRIVER.name}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource surnameDrive}" Binding="{Binding DRIVER.surname}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource numberCar}" Binding="{Binding DRIVER.number_car}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

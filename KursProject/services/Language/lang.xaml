@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  xmlns:v="clr-namespace:System;assembly=System.Runtime">
+
+    <!--General-->
+    <v:String x:Key="exit" >Exit</v:String>
+    <v:String x:Key="save" >Save</v:String>
+    <v:String x:Key="name">Name</v:String>
+    <v:String x:Key="surname">Surname</v:String>
+    <v:String x:Key="phone_number">Phone number</v:String>
+    <v:String x:Key="repNewPass">Retype Password</v:String>
+
+    <!--Registration-->
+    <v:String x:Key="login" >Login</v:String>
+    <v:String x:Key="pass" >Password</v:String>
+    <v:String x:Key="auth" >AUTHORIZE</v:String>
+    <v:String x:Key="reg" >REGISTER</v:String>
+
+    <!--Authorization-->
+    <v:String x:Key="authOrReg" >Log in or register</v:String>
+
+    <!--UserWindow-->
+    <v:String x:Key="sFlight" >Find ticket</v:String>
+    <v:String x:Key="activOrder" >Active trips</v:String>
+    <v:String x:Key="hitoryOrder" >Trip History</v:String>
+    <v:String x:Key="feedback" >Feedback</v:String>
+    <v:String x:Key="account" >Account</v:String>
+    <v:String x:Key="search" >Search</v:String>
+    <v:String x:Key="order" >Order</v:String>
+
+    <!--accountSettings-->
+    <v:String x:Key="accountInfo">Account Info</v:String>
+    <v:String x:Key="updateInfo">Update info</v:String>
+    <v:String x:Key="newPass">New password</v:String>
+
+    <!--activeOrder-->
+    <v:String x:Key="dateOrder">Date</v:String>
+    <v:String x:Key="timeOrder">Time</v:String>
+    <v:String x:Key="directFlight">Direction</v:String>
+    <v:String x:Key="dateFlight">Flight Date</v:String>
+    <v:String x:Key="timeFlight">Flight time</v:String>
+    <v:String x:Key="nameDrive">Driver (Name)</v:String>
+    <v:String x:Key="surnameDrive">Driver (Last Name)</v:String>
+    <v:String x:Key="carDrive">Driver (Auto)</v:String>
+
+    <!--Feedback-->
+    <v:String x:Key="Feedback">Feedback</v:String>
+    <v:String x:Key="feedbackEmail">E-Mail for reply</v:String>
+    <v:String x:Key="feedbackTheme">Theme</v:String>
+    <v:String x:Key="feedbackMessage">Message</v:String>
+    <v:String x:Key="feedbackSend">Send a message</v:String>
+
+    <!--AdminWindow-->
+    <v:String x:Key="addFlight">Add Flight</v:String>
+    <v:String x:Key="addDriver">Add Driver</v:String>
+    <v:String x:Key="allDrivers">All Drivers</v:String>
+    <v:String x:Key="allFlights">All flights</v:String>
+    <v:String x:Key="allUsers">All Users</v:String>
+    <v:String x:Key="allOrders">All Orders</v:String>
+
+    <!--allDrivers-->
+    <v:String x:Key="numberCar">Car number</v:String>
+    <v:String x:Key="brandCar">Car Brand</v:String>
+    <v:String x:Key="colorCar">Car color</v:String>
+    <v:String x:Key="seats">Seats</v:String>
+
+    <!--allOrders-->
+    <v:String x:Key="username">Username</v:String>
+
+    <!--helloAdmin-->
+    <v:String x:Key="str1">Welcome to Admin PU</v:String>
+    <v:String x:Key="str2">Here you can fully administer this application.</v:String>
+    <v:String x:Key="str3">The following functionality is available:</v:String>
+    <v:String x:Key="str4">Flight Administration</v:String>
+    <v:String x:Key="str5">User Administration</v:String>
+    <v:String x:Key="str6">Driver Administration</v:String>
+    <v:String x:Key="str7">View orders</v:String>
+
+    <!--newDriver-->
+    <v:String x:Key="photoCar">Select car photo</v:String>
+    <v:String x:Key="addNewDriver">Add Driver</v:String>
+
+    <!--newFlight-->
+    <v:String x:Key="selectDriver">Select Driver</v:String>
+    <v:String x:Key="createFlight">Create Flight</v:String>
+</ResourceDictionary>

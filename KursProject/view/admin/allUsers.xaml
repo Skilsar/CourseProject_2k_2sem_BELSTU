@@ -11,31 +11,15 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">База клиентов</TextBlock>
-            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
-                <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Имя" Width="120" Margin="10,0" FontSize="16"/>
-                <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Номер телефона" Width="140" Margin="10,0" FontSize="16"/>
-                <Button Height="30" Width="120">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Height="30" Command="{Binding delete}"  Width="130" Margin="10,0,10,0">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="DeleteForever" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="10,0,0,0">Удалить</TextBlock>
-                    </StackPanel>
-                </Button>
-            </DockPanel>
+            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allUsers}"/>
             <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListUsers" SelectedItem="{Binding user}" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="90" Header="Имя" Binding="{Binding name}" />
-                    <DataGridTextColumn Width="110" Header="Фамилия" Binding="{Binding surname}" />
-                    <DataGridTextColumn Width="150" Header="Номер телефона" Binding="{Binding phone_number}" />
+                    <DataGridTextColumn Width="90" Header="{DynamicResource name}" Binding="{Binding name}" />
+                    <DataGridTextColumn Width="110" Header="{DynamicResource surname}" Binding="{Binding surname}" />
+                    <DataGridTextColumn Width="150" Header="{DynamicResource phone_number}" Binding="{Binding phone_number}" />
                     <DataGridTextColumn Width="150" Header="E-Mail" Binding="{Binding email}" />
-                    <DataGridTextColumn Width="100" Header="Логин" Binding="{Binding AUTHORIZATION.login}" />
-                    <DataGridTextColumn Width="100" Header="Пароль" Binding="{Binding AUTHORIZATION.password}" />
+                    <DataGridTextColumn Width="100" Header="{DynamicResource login}" Binding="{Binding AUTHORIZATION.login}" />
+                    <DataGridTextColumn Width="100" Header="{DynamicResource pass}" Binding="{Binding AUTHORIZATION.password}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

@@ -13,11 +13,11 @@
                 <Image Source="../images/logo.png" Height="60" Width="60px"/>
                 <TextBlock FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" Foreground="#2196F4" FontSize="32">LightBooking</TextBlock>
             </DockPanel>
-            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Войдите или зарегистрируйтесь</TextBlock>
-            <TextBox Name="login" FontSize="18" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding login}" materialDesign:HintAssist.Hint="Введите логин" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontFamily="Metropolis"/>
-            <TextBox x:Name="passwordBox" FontSize="18" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding pass}" materialDesign:HintAssist.Hint="Введите пароль" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontFamily="Metropolis" KeyUp="passwordBox_KeyUp"/>
-            <Button FontSize="18" Command="{Binding singButton}" Content="ВОЙТИ" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontFamily="Metropolis"/>
-            <Button FontSize="18" Command="{Binding regButton}" Content="ЗАРЕГИСТРИРОВАТЬСЯ" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontFamily="Metropolis"/>
+            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource authOrReg}"/>
+            <TextBox Name="login" FontSize="18" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding login}" materialDesign:HintAssist.Hint="{DynamicResource login}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontFamily="Metropolis"/>
+            <TextBox x:Name="passwordBox" FontSize="18" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding pass}" materialDesign:HintAssist.Hint="{DynamicResource pass}" VerticalAlignment="Top" Width="300" Margin="0,10,0,0" FontFamily="Metropolis" KeyUp="passwordBox_KeyUp"/>
+            <Button FontSize="18" Command="{Binding singButton}" Content="{DynamicResource auth}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontFamily="Metropolis"/>
+            <Button FontSize="18" Command="{Binding regButton}" Content="{DynamicResource reg}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="30" Margin="0,10,0,0" FontFamily="Metropolis"/>
         </StackPanel>
     </Grid>
 </Window>

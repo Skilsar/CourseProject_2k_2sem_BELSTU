@@ -11,38 +11,16 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">База заказов</TextBlock>
-            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
-                <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Дата" Width="120" Margin="10,0" FontSize="16"/>
-                <TextBox HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Время" Width="120" Margin="10,0" FontSize="16"/>
-                <Button Height="30" Width="120">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Height="30" Command="{Binding open_UserInfo}"  Width="130" Margin="10,0">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="DeleteForever" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="10,0,0,0">Удалить</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Command="{Binding logOut}" Height="30" Width="135">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="ConfirmationNumberOutline" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="5,0,0,0">Добавить</TextBlock>
-                    </StackPanel>
-                </Button>
-            </DockPanel>
+            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allOrders}"/>
             <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="100" Header="Дата" Binding="{Binding date}" />
-                    <DataGridTextColumn Width="100" Header="Время" Binding="{Binding time}" />
-                    <DataGridTextColumn Width="140" Header="Имя пользователя" Binding="{Binding USER.name}" />
-                    <DataGridTextColumn Width="110" Header="Дата рейса" Binding="{Binding FLIGHT1.date}" />
-                    <DataGridTextColumn Width="100" Header="Время рейса" Binding="{Binding FLIGHT1.time}" />
-                    <DataGridTextColumn Width="110" Header="Направление" Binding="{Binding FLIGHT1.direction}" />
-                    <DataGridTextColumn Width="140" Header="Имя водителя" Binding="{Binding FLIGHT1.DRIVER.name}" />
+                    <DataGridTextColumn Width="100" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
+                    <DataGridTextColumn Width="100" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="140" Header="{DynamicResource username}" Binding="{Binding USER.name}" />
+                    <DataGridTextColumn Width="110" Header="{DynamicResource dateFlight}" Binding="{Binding FLIGHT1.date}" />
+                    <DataGridTextColumn Width="100" Header="{DynamicResource timeFlight}" Binding="{Binding FLIGHT1.time}" />
+                    <DataGridTextColumn Width="110" Header="{DynamicResource directFlight}" Binding="{Binding FLIGHT1.direction}" />
+                    <DataGridTextColumn Width="140" Header="{DynamicResource nameDrive}" Binding="{Binding FLIGHT1.DRIVER.name}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

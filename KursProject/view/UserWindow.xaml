@@ -21,38 +21,38 @@
                 <Button Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Command="{Binding searchFlights}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Найти билет</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource sFlight}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding activeOrder}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ConfirmationNumber" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Активные поездки</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource activOrder}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding historyOrder}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="History" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">История поездок</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource hitoryOrder}"/>
                     </StackPanel>
                 </Button>
 
                 <Button Command="{Binding Feedback}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Support" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Обратная связь</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource feedback}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding accountSettings}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="AccountCircle" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Аккаунт</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource account}"/>
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding logOut}" Height="40" Style="{DynamicResource ResourceKey=GridLeftBarButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Logout" Width="24" Height="24"/>
-                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}">Выйти</TextBlock>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource exit}"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -73,13 +73,9 @@
                 <Image Source="../images/logo_white.png" Height="40" Width="40px"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="White" FontFamily="Roboto" FontWeight="DemiBold">LightBooking</TextBlock>
                 <DockPanel HorizontalAlignment="Right">
-                    <Button Height="50" Command="{Binding open_UserInfo}" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Width="90">
-                        <StackPanel Orientation="Horizontal">
-                                <Image Source="../images/lang/ru.png" Width="24" Height="24" />
-                            <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="10,0,0,0">RUS</TextBlock>
-                        </StackPanel>
-                    </Button>
-                    <Button Height="50" Command="{Binding accountSettings}" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Width="120" HorizontalAlignment="Center">
+                    <ComboBox Foreground="#2196F4" x:Name="menuLanguage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" >
+                    </ComboBox>
+                    <Button Height="50" Command="{Binding accountSettings}" Style="{DynamicResource ResourceKey=GridLeftBarButton}" Width="auto" MinWidth="150" HorizontalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <Border CornerRadius="24">
                                 <Image Source="{Binding photo}" Width="24" Height="24" />
@@ -90,8 +86,8 @@
                 </DockPanel>
             </DockPanel>
         </Grid>
-        <Grid x:Name="GridPage" Grid.Column="1" Margin="0,50,-0.4,0" Grid.RowSpan="2">
-            <Frame x:Name="userFrame" Content="{Binding CurrentPage}"
+        <Grid x:Name="GridPage" Grid.Column="1" Margin="0,50,0,0" Grid.RowSpan="2">
+            <Frame Margin="0,0,0,5" x:Name="userFrame" Content="{Binding CurrentPage}"
                NavigationUIVisibility="Hidden" Grid.ColumnSpan="1"/>
         </Grid>
     </Grid>

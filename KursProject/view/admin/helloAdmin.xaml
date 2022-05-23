@@ -12,13 +12,25 @@
     <Grid ScrollViewer.VerticalScrollBarVisibility="Visible">
         <ScrollViewer>
             <StackPanel VerticalAlignment="Center" Margin="0,0,0,0">
-                <TextBlock Margin="0,15,0,10" Foreground="#2196F4" FontSize="22" FontFamily="Roboto" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Добро пожаловать в ПУ Администратора</TextBlock>
-                <TextBlock Margin="0,10,0,10" Foreground="DarkGray" FontSize="18" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Здесь вы можете полноценно администрировать данное приложение.</TextBlock>
-                <TextBlock FontWeight="Bold" Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center">Доступен следующий функционал:</TextBlock>
-                <TextBlock FontWeight="DemiBold" Margin="0,0,0,10" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center"><materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="18" Height="18"/> Админинстрирование рейсов</TextBlock>
-                <TextBlock FontWeight="DemiBold" Margin="0,0,0,10" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center"><materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="18" Height="18"/> Админинстрирование пользователей</TextBlock>
-                <TextBlock FontWeight="DemiBold" Margin="0,0,0,10" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center"><materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="18" Height="18"/> Админинстрирование водителей</TextBlock>
-                <TextBlock FontWeight="DemiBold" Margin="0,0,0,10" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center"><materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="18" Height="18"/> Просмотр заказов</TextBlock>
+                <TextBlock Margin="0,15,0,10" Foreground="#2196F4" FontSize="22" FontFamily="Roboto" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str1}"/>
+                <TextBlock Margin="0,10,0,10" Foreground="DarkGray" FontSize="18" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str2}"/>
+                <TextBlock FontWeight="Bold" Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str3}"/>
+                <StackPanel Margin="0,0,0,10" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="22" Height="22" Foreground="DarkGray"/>
+                    <TextBlock FontWeight="DemiBold" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str4}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,10" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="22" Height="22" Foreground="DarkGray"/>
+                    <TextBlock FontWeight="DemiBold" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str5}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,10" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="22" Height="22" Foreground="DarkGray"/>
+                    <TextBlock FontWeight="DemiBold" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str6}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,10" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon VerticalAlignment="Center" Kind="Check" Width="22" Height="22" Foreground="DarkGray"/>
+                    <TextBlock FontWeight="DemiBold" Foreground="DarkGray" FontSize="20" FontFamily="Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource str7}"/>
+                </StackPanel>
             </StackPanel>
         </ScrollViewer>
     </Grid>

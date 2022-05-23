@@ -13,7 +13,7 @@
             <StackPanel Margin="0,0,0,10">
                 <Border Width="600" Height="130" BorderBrush="LightGray" VerticalAlignment="Top" BorderThickness="1" CornerRadius="5" Padding="5" Margin="20,15">
                     <StackPanel>
-                        <TextBlock Margin="0,5,0,5" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Информация аккаунта</TextBlock>
+                        <TextBlock Margin="0,5,0,5" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource accountInfo}"/>
                         <DockPanel>
                             <Border Margin="15,0,15,0" HorizontalAlignment="Left" BorderThickness="1,1,1,1" BorderBrush="Black" Width="80" Height="80" CornerRadius="140,150,150,150">
                                 <Border.Background>
@@ -50,23 +50,23 @@
                 </Border>
                 <Border Width="600" Height="auto" BorderBrush="LightGray" VerticalAlignment="Top" BorderThickness="1" CornerRadius="5" Padding="5" Margin="20,0,20,0">
                     <StackPanel>
-                        <TextBlock Margin="0,5,0,5" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">Изменение информации</TextBlock>
+                        <TextBlock Margin="0,5,0,5" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource updateInfo}"/>
                         <DockPanel Margin="20,0">
                             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal" Width="550" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
                                     <StackPanel Width="260" Orientation="Horizontal" VerticalAlignment="Center">
                                         <materialDesign:PackIcon Foreground="#2196F4" Kind="User" Width="26" Height="26"/>
-                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="Имя" VerticalAlignment="Top" Width="200" FontSize="18"/>
+                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding name}" materialDesign:HintAssist.Hint="{DynamicResource name}" VerticalAlignment="Top" Width="200" FontSize="18"/>
                                     </StackPanel>
                                     <StackPanel Width="260" Orientation="Horizontal" Margin="10,0,0,0">
                                         <materialDesign:PackIcon Foreground="#2196F4" Margin="0,0,0,0" Kind="UserBox" Width="26" Height="26"/>
-                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding surname}" materialDesign:HintAssist.Hint="Фамилия" VerticalAlignment="Top" Width="200" FontSize="18"/>
+                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding surname}" materialDesign:HintAssist.Hint="{DynamicResource surname}" VerticalAlignment="Top" Width="200" FontSize="18"/>
                                     </StackPanel>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Width="550">
                                     <StackPanel Width="260" Orientation="Horizontal">
                                         <materialDesign:PackIcon Foreground="#2196F4" Kind="Phone" Width="26" Height="26"/>
-                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding phone}" materialDesign:HintAssist.Hint="Номер телефона" VerticalAlignment="Top" Width="200" FontSize="18"/>
+                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding phone}" materialDesign:HintAssist.Hint="{DynamicResource phone_number}" VerticalAlignment="Top" Width="200" FontSize="18"/>
                                     </StackPanel>
                                     <StackPanel Width="260" Orientation="Horizontal" Margin="10,0,0,0">
                                         <materialDesign:PackIcon Foreground="#2196F4" Margin="0,0,0,0" Kind="AlternateEmail" Width="26" Height="26"/>
@@ -76,16 +76,16 @@
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,5" Width="550">
                                     <StackPanel Width="260" Orientation="Horizontal">
                                         <materialDesign:PackIcon Foreground="#2196F4" Kind="Password" Width="26" Height="26"/>
-                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password}" materialDesign:HintAssist.Hint="Новый пароль" VerticalAlignment="Top" Width="200" FontSize="18"/>
+                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password}" materialDesign:HintAssist.Hint="{DynamicResource newPass}" VerticalAlignment="Top" Width="200" FontSize="18"/>
                                     </StackPanel>
                                     <StackPanel Width="260" Orientation="Horizontal" Margin="10,0,0,0">
                                         <materialDesign:PackIcon Foreground="#2196F4" Margin="0,0,0,0" Kind="PasswordPlus" Width="26" Height="26"/>
-                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password2}" materialDesign:HintAssist.Hint="Повторите пароль" VerticalAlignment="Top" Width="200" FontSize="18"/>
+                                        <TextBox Margin="10,0,0,0" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="{Binding password2}" materialDesign:HintAssist.Hint="{DynamicResource repNewPass}" VerticalAlignment="Top" Width="200" FontSize="18"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
                         </DockPanel>
-                        <Button Command="{Binding save}" Content="Сохранить" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="30" Margin="0,15,0,10" FontSize="18" Cursor="Hand"/>
+                        <Button Command="{Binding save}" Content="{DynamicResource save}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="30" Margin="0,15,0,10" FontSize="18" Cursor="Hand"/>
                     </StackPanel>
                 </Border>
             </StackPanel>
