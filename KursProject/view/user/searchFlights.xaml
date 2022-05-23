@@ -27,22 +27,20 @@
                     </StackPanel>
                     </Button>
                 </DockPanel>
-                <DataGrid MaxHeight="250" IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
+                <DataGrid MaxHeight="250" IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
                     <DataGrid.Columns>
                     <DataGridTextColumn Width="160" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
-                    <DataGridTextColumn Width="150" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />
+                    <DataGridTextColumn Width="110" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />
                     <DataGridTextColumn Width="160" Header="{DynamicResource directFlight}" Binding="{Binding direction}" />
-                        <DataGridTemplateColumn MinWidth="160" Header="{DynamicResource order}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
+                    <DataGridTextColumn Width="120" Header="{DynamicResource numberCar}" Binding="{Binding DRIVER.number_car}" />
+                    <DataGridTemplateColumn MinWidth="160" Header="{DynamicResource order}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
                                 <Button Click="newOrder" Content="{DynamicResource order}"/>
                             </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <!--<DataGridTextColumn Width="120" Header="Водитель (Имя)" Binding="{Binding DRIVER.name}" />
-                    <DataGridTextColumn Width="130" Header="Водитель (Фамилия)" Binding="{Binding DRIVER.surname}" />
-                    <DataGridTextColumn Width="130" Header="Водитель (Номер авто)" Binding="{Binding DRIVER.number_car}" />-->
-                    </DataGrid.Columns>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
                 </DataGrid>
         </StackPanel>
     </Grid>

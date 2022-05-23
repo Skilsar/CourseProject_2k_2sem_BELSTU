@@ -20,7 +20,7 @@
 
     <!--UserWindow-->
     <v:String x:Key="sFlight" >Find ticket</v:String>
-    <v:String x:Key="activOrder" >Active trips</v:String>
+    <v:String x:Key="activOrder" >Last trips</v:String>
     <v:String x:Key="hitoryOrder" >Trip History</v:String>
     <v:String x:Key="feedback" >Feedback</v:String>
     <v:String x:Key="account" >Account</v:String>

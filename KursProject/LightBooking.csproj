@@ -111,9 +111,6 @@
     <Compile Include="view\admin\allOrders.xaml.cs">
       <DependentUpon>allOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="view\SettingsLanguage.xaml.cs">
-      <DependentUpon>SettingsLanguage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="view\user\accountSettings.xaml.cs">
       <DependentUpon>accountSettings.xaml</DependentUpon>
     </Compile>
@@ -191,10 +188,6 @@
       <DependentUpon>Authorization.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="view\SettingsLanguage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="view\user\accountSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

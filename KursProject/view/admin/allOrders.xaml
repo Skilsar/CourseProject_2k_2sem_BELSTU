@@ -12,7 +12,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allOrders}"/>
-            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
+            <DataGrid MaxHeight="250" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListOrders" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="100" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
                     <DataGridTextColumn Width="100" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />

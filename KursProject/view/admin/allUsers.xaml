@@ -12,7 +12,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allUsers}"/>
-            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListUsers" SelectedItem="{Binding user}" ItemsSource="{Binding list}">
+            <DataGrid MaxHeight="250" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListUsers" SelectedItem="{Binding user}" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="90" Header="{DynamicResource name}" Binding="{Binding name}" />
                     <DataGridTextColumn Width="110" Header="{DynamicResource surname}" Binding="{Binding surname}" />
