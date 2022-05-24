@@ -12,22 +12,22 @@
     <Grid>
         <StackPanel>
             <TextBlock Margin="0,10,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allFlights}"/>
-            <DockPanel ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
-                <ComboBox FontSize="16" materialDesign:HintAssist.Hint="Направление" VerticalAlignment="Center" Width="140" Height="30" Margin="10,0">
+            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="20,10,20,10" Height="50">
+                <ComboBox SelectedItem="{Binding selectDirection}" FontSize="16" materialDesign:HintAssist.Hint="{DynamicResource directFlight}" VerticalAlignment="Center" Width="140" Height="30" Margin="10,0">
                     <ComboBoxItem>Любань - Минск</ComboBoxItem>
                     <ComboBoxItem>Минск - Любань</ComboBoxItem>
                     <ComboBoxItem>Любань - Боровляны</ComboBoxItem>
                     <ComboBoxItem>Боровляны - Любань</ComboBoxItem>
                 </ComboBox>
-                <DatePicker FontSize="16" Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Width="120" Height="30" Margin="10,0"/>
-                <Button Height="30">
+                <DatePicker SelectedDate="{Binding date}" FontSize="16" Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Width="120" Height="30" Margin="10,0"/>
+                <Button Command="{Binding SearchFlight}"  Height="30">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
                         <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Text="{DynamicResource search}"/>
                     </StackPanel>
                 </Button>
             </DockPanel>
-            <DataGrid MaxHeight="250" IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
+            <DataGrid MaxHeight="250" IsReadOnly="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" AutoGenerateColumns="False" x:Name="ListFlights" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="140" Header="{DynamicResource dateOrder}" Binding="{Binding date}" />
                     <DataGridTextColumn Width="110" Header="{DynamicResource timeOrder}" Binding="{Binding time}" />

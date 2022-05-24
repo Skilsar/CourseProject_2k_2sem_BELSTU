@@ -43,5 +43,13 @@ namespace LightBooking.viewModel
                 list = list.Where(x => x.date == _date).ToList();
             }
         }
+
+        public view.allFlights allFlights
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

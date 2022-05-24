@@ -255,6 +255,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -277,10 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\user-white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\lang\gb.png" />
-    <Resource Include="images\lang\ru.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
