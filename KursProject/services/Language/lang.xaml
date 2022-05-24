@@ -8,6 +8,7 @@
     <v:String x:Key="surname">Surname</v:String>
     <v:String x:Key="phone_number">Phone number</v:String>
     <v:String x:Key="repNewPass">Retype Password</v:String>
+    <v:String x:Key="delete">Delete</v:String>
 
     <!--Registration-->
     <v:String x:Key="login" >Login</v:String>

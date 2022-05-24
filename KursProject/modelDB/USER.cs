@@ -27,7 +27,7 @@ namespace LightBooking.modelDB
         public string name { get; set; }
 
         [Required]
-        [StringLength(16)]
+        [StringLength(25)]
         public string phone_number { get; set; }
 
         public string photo { get; set; }

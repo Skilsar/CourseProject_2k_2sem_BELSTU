@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using LightBooking.reposirory;
 using LightBooking.modelDB;
+using System.Windows;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace LightBooking.repository
 {
@@ -15,47 +17,54 @@ namespace LightBooking.repository
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
                 AUTHORIZATION auth = unitOfWork.AuthRepository.GetAll().Where(x => x.login == login && x.password == pass).FirstOrDefault();
-                switch (auth.status)
+                if (auth != null)
                 {
-                    case 1: //administrator
-                        {
-                            Dictionary<string, string> result = new Dictionary<string, string>();
-                            result.Add("Id", auth.Id.ToString());
-                            result.Add("status", auth.status.ToString());
-                            return result;
-                        }
-                    case 2: //driver
-                        {
-                            DRIVER driver = unitOfWork.DriverRepository.GetAll().Where(x => x.Auth_id == auth.Id).FirstOrDefault();
-                            Dictionary<string, string> result = new Dictionary<string, string>();
-                            result.Add("Id", driver.Id.ToString());
-                            result.Add("status", auth.status.ToString());
-                            result.Add("surname", driver.surname);
-                            result.Add("name", driver.name);
-                            result.Add("number_car", driver.number_car);
-                            result.Add("brand_car", driver.brand_car);
-                            result.Add("color_car", driver.color_car);
-                            result.Add("count_seats", driver.brand_car);
-                            result.Add("phone_number", driver.phone_number);
-                            result.Add("photo_car", driver.photo_car);
-                            return result;
-                        }
-                    case 3: //users
-                        {
-                            USER user = unitOfWork.UsersRepository.GetAll().Where(x => x.Auth_id == auth.Id).FirstOrDefault();
-                            Dictionary<string, string> result = new Dictionary<string, string>();
-                            result.Add("Id", user.Id.ToString());
-                            result.Add("status", auth.status.ToString());
-                            result.Add("name", user.name);
-                            result.Add("surname", user.surname);
-                            result.Add("phone_number", user.phone_number);
-                            result.Add("photo", user.photo);
-                            result.Add("email", user.email.ToString());
-                            return result;
-                        }
+                    switch (auth.status)
+                    {
+                        case 1: //administrator
+                            {
+                                Dictionary<string, string> result = new Dictionary<string, string>();
+                                result.Add("Id", auth.Id.ToString());
+                                result.Add("status", auth.status.ToString());
+                                return result;
+                            }
+                        case 2: //driver
+                            {
+                                DRIVER driver = unitOfWork.DriverRepository.GetAll().Where(x => x.Auth_id == auth.Id).FirstOrDefault();
+                                Dictionary<string, string> result = new Dictionary<string, string>();
+                                result.Add("Id", driver.Id.ToString());
+                                result.Add("status", auth.status.ToString());
+                                result.Add("surname", driver.surname);
+                                result.Add("name", driver.name);
+                                result.Add("number_car", driver.number_car);
+                                result.Add("brand_car", driver.brand_car);
+                                result.Add("color_car", driver.color_car);
+                                result.Add("count_seats", driver.brand_car);
+                                result.Add("phone_number", driver.phone_number);
+                                result.Add("photo_car", driver.photo_car);
+                                return result;
+                            }
+                        case 3: //users
+                            {
+                                USER user = unitOfWork.UsersRepository.GetAll().Where(x => x.Auth_id == auth.Id).FirstOrDefault();
+                                Dictionary<string, string> result = new Dictionary<string, string>();
+                                result.Add("Id", user.Id.ToString());
+                                result.Add("status", auth.status.ToString());
+                                result.Add("name", user.name);
+                                result.Add("surname", user.surname);
+                                result.Add("phone_number", user.phone_number);
+                                result.Add("photo", user.photo);
+                                result.Add("email", user.email.ToString());
+                                return result;
+                            }
+                    }
+                }
+                else
+                {
+                    new ToastContentBuilder().AddText("Уведомление").AddText("Ошибка авторизации!\nНеверные данные доступа.").Show();
                 }
             }
-            return null;
+                    return null;
         }
 
         public static string Reg(string Login, string Pass, string Name, string Surname, string PhoneNumber, string email, string Photo)
@@ -153,7 +162,14 @@ namespace LightBooking.repository
             ORDER lastOrder = new ORDER();
             using (UnitOfWork unitsOfWork = new UnitOfWork())
             {
-                lastOrder = unitsOfWork.OrderRepository.GetAll().Where(x => x.user_id == user.Id).Last();
+                try
+                {
+                    lastOrder = unitsOfWork.OrderRepository.GetAll().Where(x => x.user_id == user.Id).Last();
+                }
+                catch (Exception ex)
+                {
+                    new ToastContentBuilder().AddText("Уведомление").AddText("К сожелению у вас еще нет заказов. Сделайте заказ!").Show();
+                }
                 return lastOrder;
             }
         }

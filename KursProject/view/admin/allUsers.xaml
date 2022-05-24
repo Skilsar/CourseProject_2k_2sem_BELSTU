@@ -11,7 +11,15 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Margin="0,0,0,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allUsers}"/>
+            <DockPanel HorizontalAlignment="Center">
+                <TextBlock Margin="30,0,30,10" Foreground="#2196F4" FontSize="20" FontFamily="Roboto" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{DynamicResource allUsers}"/>
+                <Button Height="30" Command="{Binding delete}"  Width="130">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="PersonRemove" Width="24" Height="24"/>
+                        <TextBlock Style="{DynamicResource ResourceKey=GridLeftBarText}" Margin="10,0,0,0" Text="{DynamicResource delete}"/>
+                    </StackPanel>
+                </Button>
+            </DockPanel>
             <DataGrid MaxHeight="250" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" AutoGenerateColumns="False" x:Name="ListUsers" SelectedItem="{Binding user}" ItemsSource="{Binding list}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="90" Header="{DynamicResource name}" Binding="{Binding name}" />

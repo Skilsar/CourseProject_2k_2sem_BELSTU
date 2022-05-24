@@ -7,6 +7,7 @@
     <v:String x:Key="surname">Фамилия</v:String>
     <v:String x:Key="phone_number">Номер телефона</v:String>
     <v:String x:Key="repNewPass">Повторите пароль</v:String>
+    <v:String x:Key="delete">Удалить</v:String>
 
     <!--Registration-->
     <v:String x:Key="login" >Логин</v:String>

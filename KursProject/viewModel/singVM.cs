@@ -24,11 +24,13 @@ namespace LightBooking.viewModel
         {
             if (login == null || pass == null)
             {
+                new ToastContentBuilder().AddText("Уведомление").AddText("Не введены данные авторизации\nОшибка авторизации").Show();
                 return;
             }
             Dictionary<string, string> result = Requests.Login(login, pass);
             if (result == null)
             {
+                //new ToastContentBuilder().AddText("Уведомление").AddText("Ошибка авторизации").Show();
                 return;
             }
             int acceslevel = int.Parse(result["status"]);
