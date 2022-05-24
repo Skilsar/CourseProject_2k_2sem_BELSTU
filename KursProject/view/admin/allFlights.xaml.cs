@@ -26,7 +26,7 @@ namespace LightBooking.view
             InitializeComponent();
             allFlightsVM model = new allFlightsVM();
             DataContext = model;
-            ListFlights.ItemsSource = model.list;
+            //ListFlights.ItemsSource = model.list;
 
         }
     }
