@@ -53,7 +53,7 @@ namespace LightBooking.viewModel
         public void AddDriver()
         {
             bool error = false;
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 switch (i)
                 {
@@ -94,15 +94,6 @@ namespace LightBooking.viewModel
                             break;
                         }
                     case 4:
-                        {
-                            if (photoTrue == false)
-                            {
-                                MessageBox.Show("Выберите фото профиля\nДля этого кликните по круглой иконке с изображением.");
-                                error = true;
-                            }
-                            break;
-                        }
-                    case 5:
                         {
                             if (Regex.Match(name, @"^([А-я]+|[A-z]+)$").Success == false && Regex.Match(surname, @"^([А-я]+|[A-z]+)$").Success == false)
                             {
