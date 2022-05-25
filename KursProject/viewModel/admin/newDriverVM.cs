@@ -35,6 +35,7 @@ namespace LightBooking.viewModel
                 OnPropertyChanged("Photo");
             }
         }
+        public bool photoTrue = false;
 
         public ICommand selectImage => new DelegateCommand(selImg);
 
@@ -46,6 +47,7 @@ namespace LightBooking.viewModel
             {
                 string selFileName = openFile.FileName;
                 Photo = selFileName;
+                photoTrue = true;
             }
         }
 
@@ -98,6 +100,24 @@ namespace LightBooking.viewModel
                             if (Regex.Match(name, @"^([А-я]+|[A-z]+)$").Success == false && Regex.Match(surname, @"^([А-я]+|[A-z]+)$").Success == false)
                             {
                                 MessageBox.Show("Имя или фамилия введены неверно.\nВ имени или фамилии должны быть только буквы русского или английского алфавита\nПример: Админ или Admin");
+                                error = true;
+                            }
+                            break;
+                        }
+                    case 5:
+                        {
+                            if (Regex.Match(color_car, @"^([А-я]+|[A-z]+)$").Success == false)
+                            {
+                                MessageBox.Show("Введен неверный цвет.\nЦвет должен содержать только буквы русского или английского алфавита\nПример: Желтый или Yellow");
+                                error = true;
+                            }
+                            break;
+                        }
+                    case 6:
+                        {
+                            if (photoTrue == false)
+                            {
+                                MessageBox.Show("Выберите фото.\nДля этого кликните по круглой иконке с изображением.");
                                 error = true;
                             }
                             break;
