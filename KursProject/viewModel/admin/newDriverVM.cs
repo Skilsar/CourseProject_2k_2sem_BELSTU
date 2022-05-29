@@ -86,15 +86,6 @@ namespace LightBooking.viewModel
                             }
                             break;
                         }
-                    case 3:
-                        {
-                            if (Regex.Match(phone, @"^(\+375|80|375) \((29|25|44|33|17)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$").Success == false)
-                            {
-                                MessageBox.Show("Неверный формат номера телефона\nВведите номер телефона в формате\n+375 (25|29|33|44|17) 111-11-11\n+375 (25|29|33|44|17) 111-11-11\n80 (25|29|33|44|17) 111-11-11\n");
-                                error = true;
-                            }
-                            break;
-                        }
                     case 4:
                         {
                             if (Regex.Match(name, @"^([А-я]+|[A-z]+)$").Success == false && Regex.Match(surname, @"^([А-я]+|[A-z]+)$").Success == false)
@@ -109,15 +100,6 @@ namespace LightBooking.viewModel
                             if (Regex.Match(color_car, @"^([А-я]+|[A-z]+)$").Success == false)
                             {
                                 MessageBox.Show("Введен неверный цвет.\nЦвет должен содержать только буквы русского или английского алфавита\nПример: Желтый или Yellow");
-                                error = true;
-                            }
-                            break;
-                        }
-                    case 6:
-                        {
-                            if (photoTrue == false)
-                            {
-                                MessageBox.Show("Выберите фото.\nДля этого кликните по круглой иконке с изображением.");
                                 error = true;
                             }
                             break;
