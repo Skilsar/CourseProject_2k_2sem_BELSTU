@@ -41,7 +41,7 @@ namespace LightBooking.modelDB
 
         public int count_seats { get; set; }
 
-        [StringLength(16)]
+        [StringLength(20)]
         public string phone_number { get; set; }
 
         [Required]
